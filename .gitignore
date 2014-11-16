@@ -14,3 +14,7 @@ lib-cov
 coverage
 build/Release
 node_modules
+
+# Bower
+
+bower_components/
