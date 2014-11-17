@@ -1,0 +1,16 @@
+{
+  "name": "PlayNode",
+  "version": "1.0.0",
+  "authors": [
+    "Dozortsev Anton"
+  ],
+  "description": "Have fun with Bower",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
