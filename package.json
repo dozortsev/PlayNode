@@ -12,5 +12,10 @@
     "JavaScript"
   ],
   "author": "Anton Dozortsev",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jade": "^0.9.0",
+    "gulp-watch": "^1.1.0"
+  }
 }
