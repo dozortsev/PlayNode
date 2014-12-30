@@ -1,5 +1,7 @@
-var gulp = require('gulp'),
-    jade = require('gulp-jade');
+var gulp        = require('gulp'),
+    jade        = require('gulp-jade'),
+    watch       = require('gulp-watch'),
+    livereload  = require('gulp-livereload');
 
 gulp.task('jade', function () {
     gulp.src('views/*.jade')
@@ -7,11 +9,15 @@ gulp.task('jade', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', function () {
-    gulp.watch('views/*.jade', ['jade'])
+gulp.task('jade', function () {
+    gulp.src('views/*.jade')
+        .pipe(watch())
+        .pipe(jade())
+        .pipe(gulp.dest('html/'))
+        .pipe(livereload());
 });
 
-gulp.task('default', ['jade', 'watch']);
-
-
-
+//gulp.task('watch', function() {
+//    livereload.listen();
+//    gulp.watch('views/*.jade', ['jade']);
+//});
