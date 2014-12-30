@@ -5,19 +5,8 @@ var gulp        = require('gulp'),
 
 gulp.task('jade', function () {
     gulp.src('views/*.jade')
-        .pipe(jade())
-        .pipe(gulp.dest('dist'));
-});
-
-gulp.task('jade', function () {
-    gulp.src('views/*.jade')
         .pipe(watch())
         .pipe(jade())
         .pipe(gulp.dest('html/'))
         .pipe(livereload());
 });
-
-//gulp.task('watch', function() {
-//    livereload.listen();
-//    gulp.watch('views/*.jade', ['jade']);
-//});
