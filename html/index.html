@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Nice day</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+
+<body ng-app="single-page-app">
+<div ng-controller="cfgController">
+    <div>
+        <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="#/about">About us</a></li>
+                <li><a href="#/about">Read tutorial</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br/>
+    <div ng-view class="jumbotron">
+
+    </div>
+</div>
+</body>
+
+<script src="../bower_components/angularjs/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="main.js"></script>
+
+</html>

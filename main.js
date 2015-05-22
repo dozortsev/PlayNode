@@ -1,1 +1,0 @@
-var strings = require('./scripts/strings');
