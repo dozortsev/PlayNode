@@ -1,16 +1,7 @@
-var app = angular.module('single-page-app', ['ngRoute']);
+var myApp = angular.module('myApp', [])
+    .controller('MainCtrl', [function () {
+        var self = this;
 
-app.config(function ($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'home.html'
-        })
-        .when('/about', {
-            templateUrl: 'about.html'
-        });
-});
+        self.names = ['Mario', 'Luis', 'Aaron', 'Diego', 'Carlos'];
+    }]);
 
-
-app.controller('cfgController', function ($scope) {
-    $scope.message = "Hello world";
-});
