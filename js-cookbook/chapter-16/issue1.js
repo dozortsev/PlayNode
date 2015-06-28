@@ -1,16 +1,16 @@
-function Developer(name, skills, company) {
+function Developer(name, company, skills) {
     var aName = name;
-    var aSkills = skills;
     var aCompany = company;
+    var aSkills = skills;
 
     this.getName = function () {
         return aName;
     };
-    this.getSkills = function () {
-        return aSkills;
-    };
     this.getCompany = function () {
         return aCompany;
+    };
+    this.getSkills = function () {
+        return aSkills;
     };
 }
 
@@ -21,6 +21,6 @@ Developer.prototype.showYourSelf = function () {
 };
 
 var jsDeveloper = new Developer(
-    'Andy Osmany', ['JavaScript', 'Python', 'AngularJS', 'NodeJS', 'Gulp', 'and many other...'], 'Google'
+    'Andy Osmany', 'Google', ['JavaScript', 'Python', 'AngularJS', 'NodeJS', 'Gulp', 'and many other...']
 );
 console.log(jsDeveloper.showYourSelf());
