@@ -1,1 +1,4 @@
-Object-Oriented Techniques in JavaScript
+##Object-Oriented Techniques in JavaScript
+
+* Defining basic JavaScript object
+* Keeping object members private
