@@ -3,7 +3,7 @@ function Club(name, players) {
     var players = players;
 
     this.getPlayers = function () {
-        return players;
+        return players.wrap('\'');
     };
 }
 
@@ -12,6 +12,12 @@ Club.prototype.buyPlayer = function (club, player) {
     club.getPlayers().splice(index, 1);
 
     this.getPlayers().push(player);
+};
+
+Array.prototype.wrap = function (wrapper) {
+    return this.map(function (el) {
+        return wrapper + el + wrapper;
+    });
 };
 
 Club.prototype.toString = function () {
