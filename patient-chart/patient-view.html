@@ -9,6 +9,22 @@
     <!-- Bootstrap CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap-csp.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <style>
+        .tooltip.custom-tooltip .tooltip-inner {
+            color: #00b3ee;
+            background-color: #ff1;
+
+            text-align: left;
+        }
+
+        .tooltip.custom-tooltip .tooltip-arrow {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -21,11 +37,19 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <div class="panel-title">
-                            <h4>Demopgraphics <span class="glyphicon glyphicon-ok"></span></h4>
+                            <h4>Demopgraphics <span class="glyphicon glyphicon-ok"
+                                                    tooltip-placement="bottom"
+                                                    tooltip-popup-delay="500"
+                                                    tooltip="{{tooltipContent}}"></span>
+                            </h4>
                         </div>
                     </div>
+
                     <div class="panel-body">
-                        Panel content <a href="#" tooltip-placement="left" tooltip="On the Left!">left</a>
+                        Panel content <a href="#"
+                                            tooltip-placement="bottom"
+                                            tooltip-template="'tooltip.html'"
+                                            tooltip-popup-delay="500">custom tooltip</a>
                     </div>
                 </div>
                 </p>
@@ -47,6 +71,7 @@
 <script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap.js"></script>
 <script src="../bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
 
+<!-- Application station -->
 <script src="main.js"></script>
 </body>
 </html>
