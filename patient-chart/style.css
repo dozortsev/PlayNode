@@ -1,5 +1,13 @@
-.custom-tooltip {
-    color: #00b3ee;
 
-    background-color: #fff;
+/* custom CSS class must be follows by .tooltip BootstrapIO class */
+
+.tooltip.custom-tooltip .tooltip-inner {
+    color: #00b3ee;
+    background-color: #ff1;
+
+    text-align: left;
+}
+
+.tooltip.custom-tooltip .tooltip-arrow {
+    display: none;
 }
