@@ -19,13 +19,21 @@
     <div class="row">
         <div class="col-lg-10">
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <p>
-                <div class="panel panel-info">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <div class="panel-title">
-                            <h4>Demopgraphics <span class="glyphicon glyphicon-ok"
-                                                    tooltip-placement="bottom"
+                            <div class="btn-group pull-right">
+                                <span class="glyphicon glyphicon-plus text-success"
+                                                    tooltip-placement="bottom" tooltip-append-to-body="true"
+                                                    tooltip-popup-delay="500"
+                                                    tooltip="{{tooltipContent}}"></span>
+
+                            </div>
+                            <h4>
+                                Demopgraphics <span class="glyphicon glyphicon-ok text-success"
+                                                    tooltip-placement="bottom" tooltip-append-to-body="true"
                                                     tooltip-popup-delay="500"
                                                     tooltip="{{tooltipContent}}"></span>
                             </h4>
@@ -33,12 +41,71 @@
                     </div>
 
                     <div class="panel-body">
-                        Panel content <a href="#"
-                                            tooltip-placement="bottom"
-                                            tooltip-template="'tooltip.html'"
-                                            tooltip-popup-delay="500">custom tooltip</a>
+                        <form class="form-horizontal">
+
+                            <div class="form-group has-feedback">
+                                <label class="control-label col-sm-3" for="inputSuccess3">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputSuccess3">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group has-feedback">
+                                <label class="control-label col-sm-3" for="inputGroupSuccess2">Email</label>
+                                <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="inputGroupSuccess2">
+                                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+
+                </p>
+            </div>
+
+            <!-- Encounters -->
+
+
+            <div class="col-lg-8">
+                <p>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <div class="btn-group pull-right">
+                                <span style="font-size: 30px;" class="glyphicon glyphicon-remove text-danger"
+                                      tooltip-placement="bottom" tooltip-append-to-body="true"
+                                      tooltip-popup-delay="500"
+                                      tooltip="{{tooltipContent}}"></span>
+
+                            </div>
+                            <h4>Encounters</h4>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <form class="form-horizontal">
+
+                            <div class="form-group has-feedback">
+                                <label class="control-label col-sm-3" for="inputSuccess3">Name</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputSuccess3">
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group has-feedback">
+                                <label class="control-label col-sm-3" for="inputGroupSuccess2">Email</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputGroupSuccess2">
+                                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 </p>
             </div>
 
