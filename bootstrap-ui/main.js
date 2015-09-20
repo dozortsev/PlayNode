@@ -7,6 +7,18 @@ app.controller('MainCtrl', ['$scope', '$modal', function ($scope, $modal) {
         'Lorem ipsum dolor sit amet.\n Lorem ipsum dolor.' +
         'Lorem ipsum dolor sit amet.\n Lorem ipsum dolor.';
 
+    $scope.records = [
+        {
+            name: 'CPT', code: '4040F', desc: 'Lorem ipsum dolor sit amet.'
+        },{
+            name: 'CPT', code: '4044F', desc: 'Lorem ipsum dolor sit amet.'
+        },{
+            name: 'CPT', code: '3008F', desc: 'Lorem ipsum dolor sit amet.'
+        },{
+            name: 'CPT', code: '4001F', desc: 'Lorem ipsum dolor sit amet.'
+        }
+    ];
+
     $scope.datePicker = {
         dt: new Date(),
         opened: false,
@@ -16,19 +28,37 @@ app.controller('MainCtrl', ['$scope', '$modal', function ($scope, $modal) {
         }
     };
 
-    $scope.openModal = function () {
+    $scope.openModal = function (pageType) {
         var niceModal = $modal.open({
             size: 'lg',
             animation: true,
             templateUrl: 'nice-modal',
-            controller: 'ModalCtrl'
+            controller: 'ModalCtrl',
+            resolve : {
+                params: function () {
+                    return {
+                        pageType: pageType
+                    };
+                }
+            }
         });
-    }
+    };
 }]);
 
-app.controller('ModalCtrl', ['$scope', '$modalInstance', ModalCtrl]);
+app.controller('ModalCtrl', ['params', '$scope', '$modalInstance', ModalCtrl]);
 
-function ModalCtrl($scope, $modalInstance) {
+function ModalCtrl(params, $scope, $modalInstance) {
+
+    $scope.users = [
+        {id: 1, name: 'mario', isChecked: true},
+        {id: 2, name: 'diego', isChecked: false},
+        {id: 3, name: 'luis', isChecked: false},
+        {id: 4, name: 'marco', isChecked: false}
+    ];
+
+    $scope.logic = function () {
+        return params.pageType === 'user' ? 'radio' : 'checkbox';
+    };
 
     $scope.datePicker = {
         dt: new Date(),
@@ -42,7 +72,7 @@ function ModalCtrl($scope, $modalInstance) {
     $scope.cancel = function () {
         $modalInstance.dismiss();
     };
-};
+}
 
 
 app.controller('TooltipCtrl', ['$scope', function ($scope) {

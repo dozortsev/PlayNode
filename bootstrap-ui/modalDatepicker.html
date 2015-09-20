@@ -12,6 +12,13 @@
                 <input type="text" class="form-control" datepicker-popup="dd-MM-yyyy" ng-model="dt"
                        is-open="datePicker.opened" close-text="Done" ng-click="datePicker.open()"/>
             </p>
+
+            <ul>
+                <li ng-repeat="user in users">
+                    {{user.id}} {{user.name}}
+                    <input type="{{logic()}}" name="user" ng-model="user.isChecked" ng-checked="user.isChecked"/>
+                </li>
+            </ul>
         </div>
 
     </div>
