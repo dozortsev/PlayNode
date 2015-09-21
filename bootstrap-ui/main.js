@@ -50,10 +50,10 @@ app.controller('ModalCtrl', ['params', '$scope', '$modalInstance', ModalCtrl]);
 function ModalCtrl(params, $scope, $modalInstance) {
 
     $scope.users = [
-        {id: 1, name: 'mario', isChecked: true},
-        {id: 2, name: 'diego', isChecked: false},
-        {id: 3, name: 'luis', isChecked: false},
-        {id: 4, name: 'marco', isChecked: false}
+        {id: 1, name: 'mario', isChecked: true, address: { zip: 421, city: 'San Jose'}},
+        {id: 2, name: 'diego', isChecked: false, address: { zip: 124, city: 'New York'}},
+        {id: 3, name: 'luis', isChecked: false, address: { zip: 774, city: 'Cupertino'}},
+        {id: 4, name: 'marco', isChecked: false, address: { zip: 555, city: 'San Francisco'}}
     ];
 
     $scope.logic = function () {

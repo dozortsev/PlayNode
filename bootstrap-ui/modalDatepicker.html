@@ -9,13 +9,12 @@
         <div class="col-md-6">
             <p class="input-group">
 
-                <input type="text" class="form-control" datepicker-popup="dd-MM-yyyy" ng-model="dt"
-                       is-open="datePicker.opened" close-text="Done" ng-click="datePicker.open()"/>
+                <input type="text" class="form-control" ng-model="quickSearch.address"/>
             </p>
 
             <ul>
-                <li ng-repeat="user in users">
-                    {{user.id}} {{user.name}}
+                <li ng-repeat="user in users | filter:quickSearch.address">
+                    {{user.id}} {{user.name}}, address: {{user.address.zip}} {{user.address.city}}
                     <input type="{{logic()}}" name="user" ng-model="user.isChecked" ng-checked="user.isChecked"/>
                 </li>
             </ul>
