@@ -1,20 +1,27 @@
 <script type="text/ng-template" id="nice-modal">
 
     <div class="modal-header">
-        <h3 class="modal-title">Header</h3>
+        <h3 class="modal-title">{{pageType}}</h3>
     </div>
 
     <div class="modal-body">
 
         <div class="col-md-6">
             <p class="input-group">
-
                 <input type="text" class="form-control" ng-model="quickSearch.address"/>
             </p>
 
-            <ul>
-                <li ng-repeat="user in users | filter:quickSearch.address">
+            <ul ng-repeat="user in users | filter:quickSearch.address">
+                <li>
                     {{user.id}} {{user.name}}, address: {{user.address.zip}} {{user.address.city}}
+
+                    <select ng-show="{{user.docs}}" name="docs-select" ng-model="user.chosenDoc"
+                            ng-options="doc.name for doc in user.docs">
+                        <option value="">Choose book...</option>
+                    </select>
+
+                    <span ng-show="user.chosenDoc"><b>{{user.chosenDoc.name}} : {{user.chosenDoc.lang}}</b></span>
+
                     <input type="{{logic()}}" name="user" ng-model="user.isChecked" ng-checked="user.isChecked"/>
                 </li>
             </ul>

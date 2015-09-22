@@ -45,16 +45,13 @@ app.controller('MainCtrl', ['$scope', '$modal', function ($scope, $modal) {
     };
 }]);
 
-app.controller('ModalCtrl', ['params', '$scope', '$modalInstance', ModalCtrl]);
+app.controller('ModalCtrl', ['params', '$http', '$scope', '$modalInstance', function (params, $http, $scope, $modalInstance) {
+    $scope.pageType = params.pageType;
+    $scope.docName = {"name": "Scala Cookbook", "lang": "United Kingdom"};
 
-function ModalCtrl(params, $scope, $modalInstance) {
-
-    $scope.users = [
-        {id: 1, name: 'mario', isChecked: true, address: { zip: 421, city: 'San Jose'}},
-        {id: 2, name: 'diego', isChecked: false, address: { zip: 124, city: 'New York'}},
-        {id: 3, name: 'luis', isChecked: false, address: { zip: 774, city: 'Cupertino'}},
-        {id: 4, name: 'marco', isChecked: false, address: { zip: 555, city: 'San Francisco'}}
-    ];
+    $http.get('storage/users.json').success(function (data) {
+        $scope.users = data;
+    });
 
     $scope.logic = function () {
         return params.pageType === 'user' ? 'radio' : 'checkbox';
@@ -72,7 +69,8 @@ function ModalCtrl(params, $scope, $modalInstance) {
     $scope.cancel = function () {
         $modalInstance.dismiss();
     };
-}
+
+}]);
 
 
 app.controller('TooltipCtrl', ['$scope', function ($scope) {

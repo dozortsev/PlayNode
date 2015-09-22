@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1, "name": "mario", "isChecked": true, "address": { "zip": 421, "city": "San Jose"},
+    "docs": [
+      {"name": "AngularJS Cookbook", "lang": "English"},
+      {"name": "Scala Cookbook", "lang": "United Kingdom"}
+    ]
+  },
+
+  {
+    "id": 2, "name": "diego", "isChecked": false, "address": { "zip": 124, "city": "New York"}
+  },
+
+  {
+    "id": 3, "name": "luis", "isChecked": false, "address": { "zip": 774, "city": "Cupertino"},
+    "docs": [
+      {"name": "Java NutShell", "lang": "English"},
+      {"name": "MySQL Performance", "lang": "United Kingdom"}
+    ]
+  },
+
+  {
+    "id": 4, "name": "marco", "isChecked": false, "address": { "zip": 555, "city": "San Francisco"}
+  }
+]
