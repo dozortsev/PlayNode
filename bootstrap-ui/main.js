@@ -1,4 +1,4 @@
-var app = angular.module('patient-chart', ['ui.bootstrap']);
+var app = angular.module('patient-chart', ['ui.bootstrap', 'ngAnimate']);
 
 app.controller('MainCtrl', ['$scope', '$modal', function ($scope, $modal) {
 
@@ -9,15 +9,34 @@ app.controller('MainCtrl', ['$scope', '$modal', function ($scope, $modal) {
 
     $scope.records = [
         {
-            name: 'CPT', code: '4040F', desc: 'Lorem ipsum dolor sit amet.'
+            name: 'CPT', code: '4040F', desc: 'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.', isRemoved: false, isAccordOpened: false
         },{
-            name: 'CPT', code: '4044F', desc: 'Lorem ipsum dolor sit amet.'
+            name: 'CPT', code: '4044F', desc: 'Lorem ipsum dolor sit amet.', isRemoved: false , isAccordOpened: false
         },{
-            name: 'CPT', code: '3008F', desc: 'Lorem ipsum dolor sit amet.'
-        },{
-            name: 'CPT', code: '4001F', desc: 'Lorem ipsum dolor sit amet.'
+            name: 'CPT', code: '3008F', desc: 'Lorem ipsum dolor sit amet.', isRemoved: false , isAccordOpened: false
         }
     ];
+
+    $scope.loadHistory = function (record) {
+        if (record.isAccordOpened) {
+            console.log('Skip loading data during closing');
+        } else {
+            console.log('Load history for: ' + record.code);
+            record.history = [
+                'history item 1 ' + record.code,
+                'history item 2 ' + record.code
+            ];
+        }
+    };
+
+    $scope.rmHistoryItem = function (record, item) {
+        record.isAccordOpened = record.history.rm(item) !== 0;
+
+        if (!record.isAccordOpened) {
+            record.isRemoved = true;
+            $scope.$parent.records.rm(record);
+        }
+    };
 
     $scope.datePicker = {
         dt: new Date(),

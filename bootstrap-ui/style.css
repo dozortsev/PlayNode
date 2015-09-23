@@ -11,3 +11,14 @@
 .tooltip.custom-tooltip .tooltip-arrow {
     display: none;
 }
+
+.nice-link {
+    text-decoration: none; !important;
+    cursor: pointer; !important;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

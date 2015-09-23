@@ -91,7 +91,7 @@
                     <div class="panel-heading">
                         <div class="panel-title">
                             <div class="btn-group pull-right">
-                                <span style="font-size: 30px;" class="glyphicon glyphicon-remove text-danger"
+                                <span class="glyphicon glyphicon-remove text-danger"
                                       tooltip-placement="bottom" tooltip-append-to-body="true"
                                       tooltip-popup-delay="500"
                                       tooltip="{{tooltipContent}}"></span>
@@ -101,16 +101,22 @@
                         </div>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="panel-body" style="height: 100px; max-height: 100px;">
 
                         <accordion close-others="true">
-                            <accordion-group ng-repeat="r in records" is-open="false">
+                            <accordion-group ng-hide="r.isRemoved" ng-repeat="r in records" panel-class="panel-success" is-open="r.isAccordOpened">
                                 <accordion-heading>
-                                    {{r.desc}} {{r.name}}({{r.code}})
+                                    <span ng-click="loadHistory(r)" class="nice-link">
+                                        <span title="{{r.desc}}" class="truncate" style="width: 300px; display: inline-block;">{{r.desc}}</span> {{r.name}}({{r.code}})
+                                    </span>
                                 </accordion-heading>
-                                <ul>
-                                    <li ng-repeat="nestedR in records">
-                                        {{nestedR.desc}} {{nestedR.name}}({{nestedR.code}})
+
+                                <ul ng-repeat="h in r.history" ng-if="r.isAccordOpened">
+                                    <li>
+                                        <i>{{h}}</i>
+                                        <button type="button" class="btn btn-link" ng-click="rmHistoryItem(r, h)">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
                                     </li>
                                 </ul>
                             </accordion-group>
@@ -132,6 +138,7 @@
 
 <!-- AngularJS -->
 <script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -140,5 +147,6 @@
 
 <!-- Application station -->
 <script src="main.js"></script>
+<script src="../src/common.js"></script>
 </body>
 </html>
