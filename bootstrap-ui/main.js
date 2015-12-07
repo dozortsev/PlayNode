@@ -1,4 +1,4 @@
-var app = angular.module('patient-chart', ['ui.bootstrap', 'ngAnimate']);
+var app = angular.module('patient-chart', ['ui.bootstrap', 'ngAnimate', 'oitozero.ngSweetAlert']);
 
 app.directive('loading', [function () {
     return {
@@ -10,13 +10,14 @@ app.directive('loading', [function () {
     };
 }]);
 
-app.controller('MainCtrl', ['$scope', '$timeout', '$modal', function ($scope, $timeout, $modal) {
+app.controller('MainCtrl', ['$scope', '$timeout', '$modal', 'SweetAlert', function ($scope, $timeout, $modal, SweetAlert) {
 
     $scope.showLoading = true;
 
     $timeout(function () {
         $scope.showLoading = false;
-    }, 2000);
+        SweetAlert.swal("Here's a message", "It's pretty, isn't it?");
+    }, 1000);
 
     $scope.tooltipContent = 'Lorem ipsum dolor sit amet.\n Lorem ipsum dolor.' +
         'Lorem ipsum dolor sit amet.\n Lorem ipsum dolor.' +
