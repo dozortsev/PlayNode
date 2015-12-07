@@ -1,6 +1,22 @@
 var app = angular.module('patient-chart', ['ui.bootstrap', 'ngAnimate']);
 
-app.controller('MainCtrl', ['$scope', '$modal', function ($scope, $modal) {
+app.directive('loading', [function () {
+    return {
+        restrict: 'E',
+        link: function (scope, el, attr) {
+            scope.loadingMessage = 'foo bar baz'
+        },
+        templateUrl: 'loading.html'
+    };
+}]);
+
+app.controller('MainCtrl', ['$scope', '$timeout', '$modal', function ($scope, $timeout, $modal) {
+
+    $scope.showLoading = true;
+
+    $timeout(function () {
+        $scope.showLoading = false;
+    }, 2000);
 
     $scope.tooltipContent = 'Lorem ipsum dolor sit amet.\n Lorem ipsum dolor.' +
         'Lorem ipsum dolor sit amet.\n Lorem ipsum dolor.' +

@@ -13,9 +13,14 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body ng-controller="MainCtrl">
+<div ng-show="showLoading">
+    <loading>
+    </loading>
+    <h1 class="text-center">Please wait</h1>
+</div>
 
-<div class="container" ng-controller="MainCtrl">
+<div class="container" ng-hide="showLoading">
     <div class="row">
         <div class="col-lg-10">
 
