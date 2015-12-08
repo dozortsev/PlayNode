@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" ng-app="test-alert">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body ng-controller="SweetAlerts" class="col-lg-offset-2 col-lg-8">
+
+<!-- Confirm -->
+
+<br/><br/><br/>
+
+<button class="btn btn-info" ng-click="showAlert()">Confirm</button>
+
+<br/><br/><br/>
+
+<button class="btn btn-info" ng-click="showAlert()">Alert</button>
+
+<my-alert type="confirm">
+    <script type="text/ng-template" id="foo.html">
+        <div class="modal-header">
+            {{type}}
+        </div>
+        <div class="modal-body">
+            <span class="text-center text-danger">
+                <p ng-bind-html="message"></p>
+            </span>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="confirm()">OK</button>
+            <button class="btn btn-default" ng-click="close()">Close</button>
+        </div>
+    </script>
+</my-alert>
+
+</body>
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+<script src="test-alerts-ctrl.js"></script>
+<script src="my-alert-directive.js"></script>
+
+</html>
