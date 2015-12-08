@@ -12,14 +12,14 @@
 
 <br/><br/><br/>
 
-<button class="btn btn-info" ng-click="showAlert()">Confirm</button>
+<button class="btn btn-info" ng-click="openMyAlert('confirm.html')">Confirm</button>
 
 <br/><br/><br/>
 
-<button class="btn btn-info" ng-click="showAlert()">Alert</button>
+<button class="btn btn-info" ng-click="openMyAlert('alert.html')">Alert</button>
 
 <my-alert type="confirm">
-    <script type="text/ng-template" id="foo.html">
+    <script type="text/ng-template" id="confirm.html">
         <div class="modal-header">
             {{type}}
         </div>
@@ -30,6 +30,22 @@
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" ng-click="confirm()">OK</button>
+            <button class="btn btn-default" ng-click="close()">Close</button>
+        </div>
+    </script>
+</my-alert>
+
+<my-alert type="alert">
+    <script type="text/ng-template" id="alert.html">
+        <div class="modal-header">
+            {{type}}
+        </div>
+        <div class="modal-body">
+            <span class="text-center text-danger">
+                <p ng-bind-html="message"></p>
+            </span>
+        </div>
+        <div class="modal-footer">
             <button class="btn btn-default" ng-click="close()">Close</button>
         </div>
     </script>

@@ -1,4 +1,4 @@
-app.directive('myAlert', function ($modal) {
+app.directive('myAlert', function ($modal, $rootScope) {
     return {
         restrict: 'E',
         link: function (scope, element, attr) {
@@ -28,9 +28,9 @@ app.directive('myAlert', function ($modal) {
                 }
             }
 
-            scope.showAlert = function () {
+            $rootScope.openMyAlert = function (path) {
                 var modalInstance = $modal.open({
-                    templateUrl: 'foo.html',
+                    templateUrl: path,
                     animation: false,
                     controller: MainAlertCtrl,
                     backdrop: 'static',
