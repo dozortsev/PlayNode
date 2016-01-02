@@ -7,7 +7,7 @@ oddValues = [1, 2, 3, 4, 5].filter (val, idx) ->
 oddValues.should.eql [2, 4]
 
 # callback args must be wrapped in parentheses
-# even when that have only one argument
+# even when it have only one argument
 sqrValues = [1, 2, 3, 4, 5].map (val) -> val * val
 
 sqrValues.should.eql [1, 4, 9, 16, 25]
