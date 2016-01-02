@@ -4,13 +4,13 @@ oddValues = [1, 2, 3, 4, 5].filter (val, idx) ->
   console.log "Index: #{idx} value: #{val}"
   val % 2 == 0
 
-console.log oddValues
+oddValues.should.eql [2, 4]
 
 # callback args must be wrapped in parentheses
 # even when that have only one argument
 sqrValues = [1, 2, 3, 4, 5].map (val) -> val * val
 
-console.log sqrValues
+sqrValues.should.eql [1, 4, 9, 16, 25]
 
 num = 12 if sqrValues.length >= 5
 
@@ -37,7 +37,5 @@ String.prototype.repeat = (times = 2) ->
   Index: 2 value: 3
   Index: 3 value: 4
   Index: 4 value: 5
-  [ 2, 4 ]
-  [ 1, 4, 9, 16, 25 ]
 
 ###
