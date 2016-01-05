@@ -1,10 +1,10 @@
 should = require 'should'
 
-oddValues = [1, 2, 3, 4, 5].filter (val, idx) ->
+evenValues = [1, 2, 3, 4, 5].filter (val, idx) ->
   console.log "Index: #{idx} value: #{val}"
   val % 2 == 0
 
-oddValues.should.eql [2, 4]
+evenValues.should.eql [2, 4]
 
 # callback args must be wrapped in parentheses
 # even when it have only one argument
