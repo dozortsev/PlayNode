@@ -6,6 +6,7 @@ Books:
 
 Other topics, links and useful resources:
 
+* [Better JS with CoffeeScript](https://vimeo.com/35258313)
 * [JavaScript to CoffeeScript](http://js2.coffee/)
 
 Links on project for learning through code review:
