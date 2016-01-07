@@ -11,9 +11,9 @@ CoffeeCtrl = ($scope) ->
     desc: 'work on yourself and be enough rich for traveling and by stuff what I want'
   ]
 
-app = angular.module('CoffeeApp', [])
+app = angular.module 'CoffeeApp', []
 
-app.controller('CoffeeCtrl', CoffeeCtrl)
+app.controller 'CoffeeCtrl', CoffeeCtrl
 
 # init application; load compiled CoffeeScript
 angular.bootstrap document, ['CoffeeApp']
