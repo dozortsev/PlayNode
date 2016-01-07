@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="CoffeeApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Coffee</title>
+</head>
+<body ng-controller="CoffeeCtrl">
+
+<h1>{{status}}</h1>
+
+Life:
+<ul ng-repeat="task in tasks track by task.id">
+    <li>
+        {{task.name}} - <i>{{task.desc}}</i>
+    </li>
+</ul>
+
+<!-- CoffeeScript compiler -->
+<script src="../../bower_components/coffee-script/extras/coffee-script.js"></script>
+
+<!-- AngularJS -->
+<script src="../../bower_components/angular/angular.min.js"></script>
+
+<!-- Base application code -->
+<script type="text/coffeescript" src="coffee-app.coffee"></script>
+</body>
+</html>
