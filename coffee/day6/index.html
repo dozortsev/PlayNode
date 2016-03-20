@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CoffeeApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Complete</title>
+
+    <link rel="stylesheet" href="../../bower_components/angucomplete-ie8/angucomplete-ie8.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .tag-editor {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: text;
+            white-space: nowrap;
+        }
+
+        .tag-editor div input {
+            border: none !important;
+            box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            outline: 0 !important;
+            padding: 0 !important;
+            margin: 4px 3px 0;
+        }
+
+    </style>
+</head>
+<body ng-controller="CoffeeCtrl">
+
+Selected:
+<span ng-repeat="country in selected">
+    &nbsp;
+    <span style="margin-top: 10px;">
+        <span class="label label-primary">
+        {{country}}&ensp;
+            <span ng-click="remove(country)" style="cursor: pointer;" title="Remove"
+                  class="glyphicon glyphicon-remove" aria-hidden="true">
+        </span>
+    </span>
+    </span>
+</span>
+
+<angucomplete-ie8 id="ex1"
+                  placeholder="Search countries"
+                  pause="100"
+                  selected-object="callback"
+                  local-data="countries"
+                  search-fields="name"
+                  title-field="name"
+                  minlength="1"
+                  clear-selected="true"
+                  input-class="form-control form-control-small">
+</angucomplete-ie8>
+
+
+<!-- Custom -->
+
+<br><br><br>
+
+<form class="form-horizontal">
+    <div class="form-group has-feedback">
+        <label class="control-label col-sm-4" for="provider">Provider Groups</label>
+        <div class="col-lg-8">
+            <div class="input-group">
+                <div class="tag-editor" style="display: inline-flex;">
+                    <!--<div class="" >-->
+                <span ng-repeat="country in selected">
+                    &nbsp;
+                    <span id="{{country}}" style="margin-top: 7px; margin-left: -15px; margin-right: 10px; " class="label label-primary post-tag">
+                        {{country}}&ensp;
+                        <span ng-click="remove(country)" style="cursor: pointer;" title="Remove"
+                              class="glyphicon glyphicon-remove" aria-hidden="true">
+                        </span>
+                    </span>
+                </span>
+                    &nbsp;&nbsp;
+                    <angucomplete-ie8 id="ex2"
+                                      pause="100"
+                                      selected-object="callback"
+                                      local-data="countries"
+                                      search-fields="name"
+                                      title-field="name"
+                                      minlength="1"
+                                      clear-selected="true"
+                                      input-class="form-control">
+                    </angucomplete-ie8>
+                    <!--</div>-->
+                    <span class="input-group-addon" ng-class="disabled ? 'cursor-not-allowed' : 'cursor-pointer'"
+                          title="Click to change&hellip;" ng-click="modalChoseUser()">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ex2" class="col-sm-2 control-label">Provider Groups</label>
+        <div class="col-sm-6 tag-editor" style="display: inline-flex;">
+            <!--<div class="" >-->
+                <span ng-repeat="country in selected">
+                    &nbsp;
+                    <span id="{{country}}" style="margin-top: 7px; margin-left: -15px; margin-right: 10px; " class="label label-primary post-tag">
+                        {{country}}&ensp;
+                        <span ng-click="remove(country)" style="cursor: pointer;" title="Remove"
+                              class="glyphicon glyphicon-remove" aria-hidden="true">
+                        </span>
+                    </span>
+                </span>
+                &nbsp;&nbsp;
+                <angucomplete-ie8 id="ex2"
+                                  pause="100"
+                                  selected-object="callback"
+                                  local-data="countries"
+                                  search-fields="name"
+                                  title-field="name"
+                                  minlength="1"
+                                  clear-selected="true"
+                                  input-class="form-control">
+                </angucomplete-ie8>
+            <!--</div>-->
+        </div>
+    </div>
+</form>
+</body>
+
+<!-- CoffeeScript compiler -->
+<script src="../../bower_components/coffee-script/extras/coffee-script.js"></script>
+
+<!-- AngularJS -->
+<script src="../../bower_components/angular/angular.min.js"></script>
+
+<!-- Auto complete plugin -->
+<script src="../../bower_components/angucomplete-ie8/angucomplete-ie8.js"></script>
+
+<!-- Base application code -->
+<script type="text/coffeescript" src="auto-complete-app.coffee"></script>
+
+<!-- Commons -->
+<script src="../../src/common.js"></script>
+
+</html>
