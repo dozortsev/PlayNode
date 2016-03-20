@@ -2,6 +2,7 @@ eat = (meal, number) -> console.log "#{number} eating #{meal}"
 
 foodSet = ['toast', 'fish', 'peach', 'chocolate', 'nuts', 'honey']
 
+# function invocation [func args] for item of arr[, index] in <array instance> when <condition>
 eat food, ++i for food, i in foodSet when food not in ['nuts', 'fish']
 
 evens = (val for val in [1..20] by 3 when val % 2 is 0)
