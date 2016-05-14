@@ -1,5 +1,7 @@
 ## Summary
 
+This lesson was created through **3's chapter of Angular Up and Running** book.
+
 Setup test suite with [Karma][1] as test runner tool and [Jasmine][2] test framework pretty simple.
 
 Fist of all install Karma globally and plugins for Jasmine and browser launcher via NPM:
