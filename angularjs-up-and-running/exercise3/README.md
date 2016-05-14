@@ -4,7 +4,7 @@ This lesson was created through **3's chapter of Angular Up and Running** book.
 
 Setup test suite with [Karma][1] as test runner tool and [Jasmine][2] test framework pretty simple.
 
-Fist of all install Karma globally and plugins for Jasmine and browser launcher via NPM:
+Fist of all install Karma globally and plugins as Jasmine and browser launcher via NPM:
 
     npm install karma -g
     npm install karma-jasmine karma-chrome-launcher
@@ -13,10 +13,10 @@ Create `karma.conf.js` file by executing following command:
 
     karma init
 
-In config file you have to set path to Angular and source source of main code base.
+In config file you have to provide path to Angular and source source of main codebase.
 
-Run tests you need setup Karma server `karma start` that will accessible [localhost:8080](localhost:8080).
-And then run it any time through `karma run` command.
+To run tests you need setup Karma server `karma start` that by default will accessible through [localhost:8080](localhost:8080).
+And then run it any time executing `karma run` command.
 
     [2016-05-14 21:49:06.132] [DEBUG] config - Loading config /Users/Anton/Documents/Java_Projects/PlayNode/angularjs-up-and-running/exercise3/karma.conf.js
     Chrome 50.0.2661 (Mac OS X 10.11.4): Executed 0 of 2 SUCCESS (0 secs / 0 secs)
