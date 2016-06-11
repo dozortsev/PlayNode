@@ -25,3 +25,12 @@ And then run it any time executing `karma run` command.
     
 [1]: https://karma-runner.github.io/0.13/index.html
 [2]: http://jasmine.github.io/2.4/introduction.html
+
+## Summary (06-11-16)
+
+Add report for JS tests with test coverage.
+
+Install globally `karma-coverage` plugin for Karma and configure it in `karma.confg.js` file.
+After running Jasmin test via Karma the html report will be generated.
+
+![](test_coverate.png)
