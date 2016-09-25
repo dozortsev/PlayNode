@@ -13,7 +13,7 @@ Create `karma.conf.js` file by executing following command:
 
     karma init
 
-In config file you have to provide path to Angular and source source of main codebase.
+In config file you have to provide path to Angular and source of main codebase.
 
 To run tests you need setup Karma server `karma start` that by default will accessible through [localhost:8080](localhost:8080).
 And then run it any time executing `karma run` command.

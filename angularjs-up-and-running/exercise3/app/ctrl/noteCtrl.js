@@ -1,16 +1,12 @@
-angular.module('notesApp', [])
-    .controller('ListCtrl', [function () {
-        var ctrl = this;
+angular.module('notesApp', []).controller(
+    'ListCtrl', ['$scope', '$rootScope', ListCtrl]
+);
 
-        ctrl.items = [
-            {id: 1, label: 'First', done: true},
-            {id: 2, label: 'Second', done: false}
-        ];
+function ListCtrl($scope, $rootScope) {
+    $scope.message = 'Some message';
 
-        ctrl.getDoneClass = function(item) {
-            return {
-                finished: item.done,
-                unfinished: !item.done
-            };
-        };
-    }]);
+    $rootScope.loggedUser = {
+        id: 100,
+        role: 'admin'
+    };
+}

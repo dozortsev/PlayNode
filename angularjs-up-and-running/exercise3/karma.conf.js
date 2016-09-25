@@ -16,8 +16,9 @@ module.exports = function(config) {
     files: [
         '../../bower_components/angular/angular.min.js',
         '../../bower_components/angular-mocks/angular-mocks.js',
-        'app/ctrl/noteCtrl.js',
-        'test/controllerSpec.js'
+
+        'app/**/*.js',
+        'test/**/*.js'
     ],
 
 
@@ -62,7 +63,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
@@ -71,7 +72,13 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    plugins: [
+      'karma-jasmine',
+      'karma-coverage',
+      'karma-phantomjs-launcher'
+    ]
   });
 };
 

@@ -3,31 +3,27 @@ describe('Controller: ListCtrl', function() {
     beforeEach(module('notesApp'));
 
     var ctrl;
+    var $scope = {};
+    var $rootScope = {};
 
     // Before each unit test, instantiate a new instance
     // of the controller
-    beforeEach(inject(function($controller) {
-        ctrl = $controller('ListCtrl');
+    beforeEach(inject(function(_$controller_) {
+        ctrl = _$controller_('ListCtrl', {
+            $scope: $scope,
+            $rootScope: $rootScope
+        });
     }));
 
-    it('should have items available on load', function() {
-        expect(ctrl.items).toEqual([
-            {id: 1, label: 'First', done: true},
-            {id: 2, label: 'Second', done: false}
-        ]);
+    it('should exist', function() {
+        expect(ctrl).toBeDefined();
     });
 
-    it('should have highlight items based on state', function() {
-        var item = {id: 1, label: 'First', done: true};
-
-        var actualClass = ctrl.getDoneClass(item);
-        expect(actualClass.finished).toBeTruthy();
-        expect(actualClass.unfinished).toBeFalsy();
-
-        item.done = false;
-        actualClass = ctrl.getDoneClass(item);
-        expect(actualClass.finished).toBeFalsy();
-        expect(actualClass.unfinished).toBeTruthy();
+    it('should have initialized data', function() {
+        expect($rootScope.loggedUser).toEqual({
+            id: 100,
+            role: 'admin'
+        });
+        expect($scope.message).toEqual('Some message');
     });
-
 });
